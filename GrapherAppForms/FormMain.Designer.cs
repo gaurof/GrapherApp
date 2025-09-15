@@ -56,13 +56,13 @@ partial class FormMain
         // 
         listBox.BackColor = Color.DarkSlateGray;
         listBox.BorderStyle = BorderStyle.None;
-        listBox.Font = new Font("Segoe UI", 20F);
+        listBox.Font = new Font("Segoe UI", 12F);
         listBox.ForeColor = Color.WhiteSmoke;
         listBox.FormattingEnabled = true;
-        listBox.ItemHeight = 37;
-        listBox.Location = new Point(12, 12);
+        listBox.ItemHeight = 21;
+        listBox.Location = new Point(7, 12);
         listBox.Name = "listBox";
-        listBox.Size = new Size(155, 407);
+        listBox.Size = new Size(162, 420);
         listBox.TabIndex = 1;
         listBox.SelectedIndexChanged += ListBox_SelectedIndexChanged;
         // 
