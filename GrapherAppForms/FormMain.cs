@@ -52,8 +52,14 @@ namespace GrapherAppForms
 
             if (model.Series.Count > 0)
                 model.Series.Clear();
+
+            foreach (var axis in function.Axes)
+                model.Axes.Add(axis);
+
+            foreach (var annotation in function.Annotations)
+                model.Annotations.Add(annotation);
+
             model.Series.Add(((LineFunction)function).LineSeries);
-            model.InvalidatePlot(true);
         }
 
         private static void EnsureFunctionIsCorrect(Function function)
@@ -69,10 +75,6 @@ namespace GrapherAppForms
             var selectedIndex = listBox.SelectedIndex;
             var selectedFunction = Storage.FunctionsList[selectedIndex];
             DisplayFunction(selectedFunction);
-            //model.Series.Clear();
-            //model.Series.Add(selectedFunction);
-            //plotView.Model = model;
-            //model.InvalidatePlot(true);
         }
     }
 }

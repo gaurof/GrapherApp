@@ -17,7 +17,7 @@ internal static class Storage
             new TrigFunction(function: Math.Sin, 
                              xStart: -4*Math.PI, 
                              xEnd: 4*Math.PI, 
-                             step: Math.PI/100, 
+                             step: Math.PI/10, 
                              title: "y = sin(x)",
                              subtitle: "subtitle"),
         ];
