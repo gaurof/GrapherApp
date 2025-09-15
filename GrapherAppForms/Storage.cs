@@ -12,13 +12,17 @@ namespace GrapherAppForms;
 
 internal static class Storage
 {
-    public static List<Function> FunctionsList = 
+    public static List<Function> FunctionsList =
         [
-            new TrigFunction(function: Math.Sin, 
-                             xStart: -4*Math.PI, 
-                             xEnd: 4*Math.PI, 
-                             step: Math.PI/10, 
+            new TrigFunction(function: Math.Sin,
+                             xStart: -4*Math.PI,
+                             xEnd: 4*Math.PI,
+                             step: Math.PI/10,
                              title: "y = sin(x)",
                              subtitle: "subtitle"),
+
+            new LineFunction(function: (x) => x * x,
+                             title: "y = x^2",
+                             subtitle: "Степенная функция")
         ];
 }

@@ -48,10 +48,8 @@ namespace GrapherAppForms
 
         private void DisplayFunction(Function function)
         {
-            EnsureFunctionIsCorrect(function);
-
-            if (model.Series.Count > 0)
-                model.Series.Clear();
+            TryEnsureFunctionIsValid(function);
+            ClearModel();
 
             foreach (var axis in function.Axes)
                 model.Axes.Add(axis);
@@ -60,15 +58,34 @@ namespace GrapherAppForms
                 model.Annotations.Add(annotation);
 
             model.Series.Add(((LineFunction)function).LineSeries);
-        }
 
-        private static void EnsureFunctionIsCorrect(Function function)
+            model.InvalidatePlot(true);
+        }
+        private static void TryEnsureFunctionIsValid(Function function)
+        {
+            try
+            {
+                EnsureFunctionIsValid(function);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
+        private static void EnsureFunctionIsValid(Function function)
         {
             if (function is null)
                 throw new NullReferenceException();
             if (function is not LineFunction)
                 throw new ArgumentException("Tried displaying a function of unknown type", nameof(function));
         }
+        private void ClearModel()
+        {
+            model.Axes.Clear();
+            model.Annotations.Clear();
+            model.Series.Clear();
+        }
+
 
         private void ListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
