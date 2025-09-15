@@ -12,6 +12,12 @@ namespace GrapherAppForms;
 
 internal static class Storage
 {
+    private const double N = 1000;
+    private const double T = 20;
+    private const double h = T/N;
+    private const double k = 0.5;
+
+     
     public static List<Function> FunctionsList =
         [
             new TrigFunction(function: Math.Sin,
@@ -23,6 +29,13 @@ internal static class Storage
 
             new LineFunction(function: (x) => x * x,
                              title: "y = x^2",
-                             subtitle: "Степенная функция")
+                             subtitle: "Степенная функция"),
+
+            new LineFunction(function: (x) => (1 - k * h) * x,
+                             title: "Явная схема"),
+            new LineFunction(function: (x) => x / (1 + k * h),
+                             title: "Неявная схема"),
+            new LineFunction(function: (x) => Math.Exp(-k * (x + h)),
+                             title: "Аналитическое решение"),
         ];
 }

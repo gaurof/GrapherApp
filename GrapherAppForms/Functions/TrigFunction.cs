@@ -21,7 +21,7 @@ public class TrigFunction(Func<double, double> function,
         new LinearAxis
         {
             Position = AxisPosition.Bottom,
-            Title = "X Axes",
+            Title = "X Axis",
             MajorStep = Math.PI,
             FractionUnit = Math.PI,
             FractionUnitSymbol = "π",
@@ -33,7 +33,7 @@ public class TrigFunction(Func<double, double> function,
         new LinearAxis
         {
             Position = AxisPosition.Right,
-            Title = "Y Axes",
+            Title = "Y Axis",
             MajorGridlineStyle = LineStyle.Automatic,
             AxislineColor = OxyColors.White,
             AxislineStyle = LineStyle.Solid

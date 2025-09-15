@@ -16,7 +16,7 @@ public abstract class Function(string title = "", string subtitle = "")
         new LinearAxis
         {
             Position = AxisPosition.Bottom,
-            Title = "X Axes",
+            Title = "X Axis",
             MajorStep = 1,
             MajorGridlineStyle = LineStyle.Automatic,
             AxislineColor = OxyColors.White,
@@ -26,7 +26,7 @@ public abstract class Function(string title = "", string subtitle = "")
         new LinearAxis
         {
             Position = AxisPosition.Right,
-            Title = "Y Axes",
+            Title = "Y Axis",
             MajorStep = 1,
             MajorGridlineStyle = LineStyle.Automatic,
             AxislineColor = OxyColors.White,
